@@ -1,0 +1,10 @@
+#!/bin/bash
+
+printf '%s %s\n' "$(date ""+%T"")" "Executing dhcp_enter_hook script." >> /home/pi/logs/att_bypass.log
+if pgrep -x wpa_supplicant > /dev/null
+then
+  printf '%s %s\n' "$(date ""+%T"")" "wpa_supplicant is already running." >> /home/pi/logs/att_bypass.log
+else
+  printf '%s %s\n' "$(date ""+%T"")" "Running wpa_supplicant binary." >> /home/pi/logs/att_bypass.log
+  /sbin/wpa_supplicant -d -s -B -Dwired -ieth0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+fi
