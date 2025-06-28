@@ -90,7 +90,7 @@ To SSH to Firewalla router, see [how to ssh into Firewalla] router for SSH instr
 
 ### SCP extracted certs and config to firewalla
 
-SCP the extracted contents from your local machine to the Firewalla Gold router.
+SCP the extracted contents from your local machine to the Firewalla router.
 
 ```shell
 certs/extracted on  main [?]
@@ -200,7 +200,7 @@ fi
 
 ### Install wpa_supplicant
 
-I am not able to use the wpa_supplicant that comes with Firewalla Gold, because there isn't one installed.
+I am not able to use the wpa_supplicant that comes with Firewalla, because there isn't one installed.
 Also, I am not able to install without getting the following warning from firewalla.
 
 ```shell
@@ -254,14 +254,14 @@ root     31881  0.0  0.0  45360   716 ?        Ss   15:03   0:00 /sbin/wpa_suppl
 pi       32435  0.0  0.0  13136  1108 pts/0    S+   15:03   0:00 grep supplicant
 ```
 
-I rebooted the Firewalla Gold router from app to verify that the script runs on boot and it does.
+I rebooted the Firewalla router from app to verify that the script runs on boot and it does.
 The script will also take care of reinstalling `wpa_supplicant` if Firewalla is updated.
 
-Done, that's it. I'll update once I connect the Firewalla Gold directly to ONT and see if it works.
+Done, that's it. I'll update once I connect the Firewalla directly to ONT and see if it works.
 
 ##### Verification
 
-Verified, it worked, I am able to disconnect the AT&T router and connect the Firewalla Gold directly to the ONT
+Verified, it worked, I am able to disconnect the AT&T router and connect the Firewalla directly to the ONT
 and the internet is online.
 
 ```shell
