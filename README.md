@@ -258,3 +258,27 @@ I rebooted the Firewalla Gold router from app to verify that the script runs on 
 The script will also take care of reinstalling `wpa_supplicant` if Firewalla is updated.
 
 Done, that's it. I'll update once I connect the Firewalla Gold directly to ONT and see if it works.
+
+##### Verification
+
+Verified, it worked, I am able to disconnect the AT&T router and connect the Firewalla Gold directly to the ONT
+and the internet is online.
+
+```shell
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: eth0: CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: EAPOL: IEEE 802.1X for plaintext connection; no EAPOL-Key frames required
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: eth0: WPA: EAPOL processing complete
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: eth0: Cancelling authentication timeout
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: eth0: State: ASSOCIATED -> COMPLETED
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: eth0: CTRL-EVENT-CONNECTED - Connection to 42:69:2C:D5:5A:93 completed [id=0 id_str=]
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: EAPOL: SUPP_PAE entering state AUTHENTICATED
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: EAPOL: Supplicant port status: Authorized
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: EAPOL: SUPP_BE entering state RECEIVE
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: EAPOL: SUPP_BE entering state SUCCESS
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: EAPOL: SUPP_BE entering state IDLE
+Jun 27 21:00:01 firewalla wpa_supplicant[14671]: EAPOL authentication completed - result=SUCCESS
+Jun 27 21:00:31 firewalla wpa_supplicant[14671]: EAPOL: authWhile --> 0
+Jun 27 21:00:31 firewalla wpa_supplicant[14671]: EAPOL: startWhen --> 0
+Jun 27 21:01:01 firewalla wpa_supplicant[14671]: EAPOL: idleWhile --> 0
+Jun 27 21:01:01 firewalla wpa_supplicant[14671]: EAPOL: disable timer tick
+```
