@@ -21,5 +21,6 @@ fi
 if ! pgrep -x wpa_supplicant > /dev/null
 then
   sudo cp /home/pi/wpa_supplicant/dhcp_enter_hook /etc/dhcp/dhclient-enter-hooks.d/att_bypass
+  sudo cp /home/pi/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
   sudo systemctl restart firerouter_dhclient@eth0
 fi
